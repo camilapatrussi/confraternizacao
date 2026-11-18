@@ -4,130 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Party | Organização</title>
+    <title>Sakura Party | Organização</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-<div class="layout">
+<body data-page="organizacao">
 
+<div class="layout">
     <aside class="sidebar">
-        <div class="logo">🎀 Pink Party</div>
-        <p class="subtitle">Organização de eventos</p>
-        <nav>
-            <a href="index.html">🏠 Início</a>
-            <a href="convidados.html">👥 Convidados</a>
-            <a href="financeiro.html">💰 Financeiro</a>
-            <a href="organizacao.html" class="active">📋 Organização</a>
+        <div class="brand">
+            <span class="brand-icon">🌸</span>
+            <h2>Sakura Party</h2>
+            <small>和 • Harmony & Celebration</small>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">🏮 Início</a>
+            <a href="organizacao.html" class="active">🌸 Organização</a>
+            <a href="pessoas.html">🎀 Pessoas</a>
+            <a href="real.html">💴 Financeiro</a>
         </nav>
-        <div class="sidebar-footer">Feito com ♡</div>
+
+        <div class="sidebar-footer">
+            <span>🌙 ✨ 🏮</span>
+            <p>Planeje com carinho cada detalhe.</p>
+        </div>
     </aside>
 
     <main class="main-content">
-
-        <header class="page-header">
-            <h1>Organização do evento 🌷</h1>
-            <p>Planeje os detalhes para que tudo saia perfeito!</p>
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">花 • HANA • FLORES</span>
+                <h1>Organização</h1>
+                <p>Crie e gerencie suas confraternizações.</p>
+            </div>
+            <div class="top-decoration">🏮 🌸</div>
         </header>
 
-        <section class="form-card">
-            <h3>🎀 Informações da confraternização</h3>
-
-            <form id="formEvento">
-                <div class="form-grid">
-
-                    <div class="field">
-                        <label>Nome do evento</label>
-                        <input type="text" id="nomeEvento" placeholder="Ex: Confraternização 2026" required>
-                    </div>
-
-                    <div class="field">
-                        <label>Data</label>
-                        <input type="date" id="dataEvento">
-                    </div>
-
-                    <div class="field">
-                        <label>Horário</label>
-                        <input type="time" id="horarioEvento">
-                    </div>
-
-                    <div class="field">
-                        <label>Local</label>
-                        <input type="text" id="localEvento" placeholder="Onde será realizado?">
-                    </div>
-
-                    <div class="field full">
-                        <label>Descrição</label>
-                        <textarea id="descricaoEvento" placeholder="Informações adicionais sobre o evento..."></textarea>
-                    </div>
-
-                </div>
-
-                <button type="submit" class="btn-primary">Salvar informações</button>
-            </form>
-        </section>
-
-        <section class="form-card">
-            <h3>📝 Checklist de tarefas</h3>
-
-            <form id="formTarefa">
-                <div class="form-grid">
-                    <div class="field">
-                        <label>Nome da tarefa</label>
-                        <input type="text" id="nomeTarefa" placeholder="Ex: Comprar decoração" required>
-                    </div>
-
-                    <div class="field">
-                        <label>Responsável</label>
-                        <input type="text" id="responsavelTarefa" placeholder="Quem ficará responsável?">
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-primary">+ Adicionar tarefa</button>
-            </form>
-
-            <div id="listaTarefas" style="margin-top:20px;">
-                <p class="empty">Nenhuma tarefa cadastrada.</p>
+        <section class="welcome-banner compact-banner">
+            <div>
+                <span class="banner-label">EVENT PLANNER</span>
+                <h2>Momentos que merecem ser celebrados.</h2>
+                <p>Organize datas, locais, orçamento e detalhes.</p>
             </div>
+            <span class="banner-emoji">🎎</span>
         </section>
 
-        <section class="form-card">
-            <h3>🍰 Comidas e bebidas</h3>
-
-            <form id="formItem">
-                <div class="form-grid">
-                    <div class="field">
-                        <label>Nome do item</label>
-                        <input type="text" id="nomeItem" placeholder="Ex: Refrigerante" required>
+        <section class="content-grid">
+            <article class="panel form-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">NOVO EVENTO</span>
+                        <h2 id="eventFormTitle">Cadastrar confraternização</h2>
                     </div>
-
-                    <div class="field">
-                        <label>Categoria</label>
-                        <select id="categoriaItem">
-                            <option value="Comida">Comida</option>
-                            <option value="Bebida">Bebida</option>
-                            <option value="Decoração">Decoração</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label>Responsável</label>
-                        <input type="text" id="responsavelItem" placeholder="Quem vai levar?">
-                    </div>
+                    <span class="heading-icon">🌸</span>
                 </div>
 
-                <button type="submit" class="btn-primary">+ Adicionar item</button>
-            </form>
+                <form id="eventForm">
+                    <input type="hidden" id="eventId">
 
-            <div id="listaItens" style="margin-top:20px;">
-                <p class="empty">Nenhum item cadastrado.</p>
-            </div>
+                    <label for="eventName">Nome da confraternização</label>
+                    <input type="text" id="eventName" placeholder="Ex.: Festa de fim de ano" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="eventDate">Data</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+                        <div>
+                            <label for="eventTime">Horário</label>
+                            <input type="time" id="eventTime">
+                        </div>
+                    </div>
+
+                    <label for="eventLocation">Local</label>
+                    <input type="text" id="eventLocation" placeholder="Endereço ou salão">
+
+                    <label for="eventBudget">Orçamento (R$)</label>
+                    <input type="number" id="eventBudget" min="0" step="0.01" placeholder="0,00">
+
+                    <label for="eventDescription">Descrição</label>
+                    <textarea id="eventDescription" rows="4" placeholder="Conte os detalhes do evento..."></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="eventSubmit">
+                            🌸 Salvar evento
+                        </button>
+                        <button type="button" class="secondary-button" id="eventCancel" hidden>
+                            Cancelar edição
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">AGENDA</span>
+                        <h2>Minhas confraternizações</h2>
+                    </div>
+                    <span class="heading-icon">🏮</span>
+                </div>
+
+                <div id="eventsList" class="record-list">
+                    <p class="empty-state">🌸 Seus eventos aparecerão aqui.</p>
+                </div>
+            </article>
         </section>
 
-        <footer>Pink Party © 2026 | Feito com ♡</footer>
-
+        <footer class="footer">
+            <p>🌸 Sakura Party • Organização</p>
+        </footer>
     </main>
 </div>
-<script src="js/script.js"></script>
+
 </body>
+</html>
+
 </html>

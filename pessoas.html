@@ -4,89 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Party | Convidados</title>
+    <title>Sakura Party | Pessoas</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-<div class="layout">
+<body data-page="pessoas">
 
+<div class="layout">
     <aside class="sidebar">
-        <div class="logo">🎀 Pink Party</div>
-        <p class="subtitle">Organização de eventos</p>
-        <nav>
-            <a href="index.html">🏠 Início</a>
-            <a href="convidados.html" class="active">👥 Convidados</a>
-            <a href="financeiro.html">💰 Financeiro</a>
-            <a href="organizacao.html">📋 Organização</a>
+        <div class="brand">
+            <span class="brand-icon">🌸</span>
+            <h2>Sakura Party</h2>
+            <small>和 • Harmony & Celebration</small>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">🏮 Início</a>
+            <a href="organizacao.html">🌸 Organização</a>
+            <a href="pessoas.html" class="active">🎀 Pessoas</a>
+            <a href="real.html">💴 Financeiro</a>
         </nav>
-        <div class="sidebar-footer">Feito com ♡</div>
+
+        <div class="sidebar-footer">
+            <span>🌙 ✨ 🏮</span>
+            <p>Cada pessoa faz a celebração mais especial.</p>
+        </div>
     </aside>
 
     <main class="main-content">
-        <header class="page-header">
-            <h1>Lista de convidados 👥</h1>
-            <p>Cadastre e acompanhe as confirmações de presença.</p>
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">友達 • TOMODACHI</span>
+                <h1>Lista de pessoas</h1>
+                <p>Gerencie convidados e confirmações.</p>
+            </div>
+            <div class="top-decoration">🎀 🌸</div>
         </header>
 
-        <section class="form-card">
-            <h3>💗 Adicionar convidado</h3>
+        <section class="welcome-banner compact-banner">
+            <div>
+                <span class="banner-label">GUEST BOOK</span>
+                <h2>Quem vai participar?</h2>
+                <p>Cadastre pessoas e acompanhe suas presenças.</p>
+            </div>
+            <span class="banner-emoji">🐱</span>
+        </section>
 
-            <form id="formConvidado">
-                <div class="form-grid">
-                    <div class="field">
-                        <label>Nome completo</label>
-                        <input type="text" id="nomeConvidado" placeholder="Nome do convidado" required>
-                    </div>
+        <section class="stats-grid small-stats">
+            <article class="stat-card">
+                <span>🎀 Total de pessoas</span>
+                <strong id="peopleTotal">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>💗 Confirmadas</span>
+                <strong id="peopleConfirmed">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>🌸 Pendentes</span>
+                <strong id="peoplePending">0</strong>
+            </article>
+        </section>
 
-                    <div class="field">
-                        <label>Turma / Setor</label>
-                        <input type="text" id="turmaConvidado" placeholder="Ex: 3º Desenvolvimento">
+        <section class="content-grid">
+            <article class="panel form-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">NOVO CADASTRO</span>
+                        <h2 id="personFormTitle">Cadastrar pessoa</h2>
                     </div>
-
-                    <div class="field">
-                        <label>Contato</label>
-                        <input type="text" id="contatoConvidado" placeholder="Telefone ou e-mail">
-                    </div>
-
-                    <div class="field">
-                        <label>Presença</label>
-                        <select id="presencaConvidado">
-                            <option value="Pendente">Pendente</option>
-                            <option value="Confirmado">Confirmado</option>
-                            <option value="Não irá">Não irá</option>
-                        </select>
-                    </div>
+                    <span class="heading-icon">🎀</span>
                 </div>
 
-                <button type="submit" class="btn-primary">+ Adicionar convidado</button>
-            </form>
+                <form id="personForm">
+                    <input type="hidden" id="personId">
+
+                    <label for="personName">Nome completo</label>
+                    <input type="text" id="personName" placeholder="Nome da pessoa" required>
+
+                    <label for="personPhone">Telefone</label>
+                    <input type="tel" id="personPhone" placeholder="(00) 00000-0000">
+
+                    <label for="personEmail">E-mail</label>
+                    <input type="email" id="personEmail" placeholder="email@exemplo.com">
+
+                    <label for="personEvent">Confraternização</label>
+                    <select id="personEvent">
+                        <option value="">Sem evento definido</option>
+                    </select>
+
+                    <label for="personStatus">Presença</label>
+                    <select id="personStatus">
+                        <option value="Pendente">Pendente</option>
+                        <option value="Confirmada">Confirmada</option>
+                        <option value="Não comparecerá">Não comparecerá</option>
+                    </select>
+
+                    <label for="personNotes">Observações</label>
+                    <textarea id="personNotes" rows="3" placeholder="Informações adicionais..."></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="personSubmit">
+                            🎀 Salvar pessoa
+                        </button>
+                        <button type="button" class="secondary-button" id="personCancel" hidden>
+                            Cancelar edição
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">CONVIDADOS</span>
+                        <h2>Pessoas cadastradas</h2>
+                    </div>
+                    <span class="heading-icon">🌸</span>
+                </div>
+
+                <div class="search-box">
+                    <span>🔎</span>
+                    <input type="search" id="personSearch" placeholder="Pesquisar pessoa...">
+                </div>
+
+                <div id="peopleList" class="record-list">
+                    <p class="empty-state">🎀 Nenhuma pessoa cadastrada.</p>
+                </div>
+            </article>
         </section>
 
-        <section class="summary-box">
-            <p>Convidados cadastrados</p>
-            <h2 id="quantidadeConvidados">0 pessoas</h2>
-        </section>
-
-        <section class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Turma</th>
-                        <th>Contato</th>
-                        <th>Presença</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="listaConvidados">
-                    <tr><td colspan="5">Nenhum convidado cadastrado.</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <footer>Pink Party © 2026 | Feito com ♡</footer>
+        <footer class="footer">
+            <p>🌸 Sakura Party • Pessoas</p>
+        </footer>
     </main>
 </div>
-<script src="js/script.js"></script>
+
 </body>
 </html>

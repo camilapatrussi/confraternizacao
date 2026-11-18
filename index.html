@@ -4,107 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Party | Início</title>
+    <title>Sakura Party | Início</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body data-page="inicio">
 
 <div class="layout">
-
     <aside class="sidebar">
-        <div class="logo">🎀 Pink Party</div>
-        <p class="subtitle">Organização de eventos</p>
+        <div class="brand">
+            <span class="brand-icon">🌸</span>
+            <h2>Sakura Party</h2>
+            <small>和 • Harmony & Celebration</small>
+        </div>
 
-        <nav>
-            <a href="index.html" class="active">🏠 Início</a>
-            <a href="convidados.html">👥 Convidados</a>
-            <a href="financeiro.html">💰 Financeiro</a>
-            <a href="organizacao.html">📋 Organização</a>
+        <nav class="menu">
+            <a href="index.html" class="active">🏮 Início</a>
+            <a href="organizacao.html">🌸 Organização</a>
+            <a href="pessoas.html">🎀 Pessoas</a>
+            <a href="real.html">💴 Financeiro</a>
         </nav>
 
         <div class="sidebar-footer">
-            Feito com ♡
+            <span>🌙 ✨ 🏮</span>
+            <p>Um momento especial merece uma celebração especial.</p>
         </div>
     </aside>
 
     <main class="main-content">
-
         <header class="topbar">
             <div>
-                <h1>Olá, organizadora! 🌸</h1>
-                <p>Vamos preparar uma confraternização incrível?</p>
+                <span class="eyebrow">日本 • 日本文化 • 中国</span>
+                <h1>Bem-vinda ao Sakura Party!</h1>
+                <p>Organize momentos especiais com delicadeza.</p>
             </div>
-            <div class="profile">🎀</div>
+            <div class="top-decoration">🌸 🏮 🌸</div>
         </header>
 
-        <section class="welcome">
+        <section class="welcome-banner">
             <div>
-                <span>EVENTO ESCOLAR</span>
-                <h2>Minha Confraternização 💗</h2>
-                <p>Organize cada detalhe e torne esse momento especial!</p>
-                <a href="organizacao.html" class="btn">Organizar evento</a>
+                <span class="banner-label">WELCOME • ようこそ</span>
+                <h2>Que cada encontro seja inesquecível!</h2>
+                <p>Seu espaço para planejar, organizar e celebrar.</p>
+                <a href="organizacao.html" class="primary-button">
+                    + Criar confraternização
+                </a>
             </div>
-            <div class="welcome-decoration">🌷</div>
+            <div class="banner-art">🌸</div>
         </section>
 
-        <section class="stats">
-
-            <div class="stat-card">
-                <div class="stat-icon">👥</div>
-                <p>Total de convidados</p>
-                <h2 id="totalConvidados">0</h2>
+        <section class="section-heading">
+            <div>
+                <span class="eyebrow">VISÃO GERAL</span>
+                <h2>Seu painel</h2>
             </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">💗</div>
-                <p>Presenças confirmadas</p>
-                <h2 id="totalConfirmados">0</h2>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">💰</div>
-                <p>Valor arrecadado</p>
-                <h2 id="totalArrecadado">R$ 0,00</h2>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">📝</div>
-                <p>Tarefas concluídas</p>
-                <h2 id="totalTarefas">0</h2>
-            </div>
-
+            <span class="date-label" id="todayDate"></span>
         </section>
 
-        <section class="content-grid">
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span class="stat-icon">🏮</span>
+                <span>Confraternizações</span>
+                <strong id="totalEvents">0</strong>
+                <small>Eventos cadastrados</small>
+            </article>
 
-            <div class="panel">
-                <h3>📅 Detalhes do evento</h3>
-                <div class="event-details">
-                    <p><strong>Nome:</strong> <span id="eventoNome">Minha Confraternização</span></p>
-                    <p><strong>Data:</strong> <span id="eventoData">A definir</span></p>
-                    <p><strong>Horário:</strong> <span id="eventoHorario">A definir</span></p>
-                    <p><strong>Local:</strong> <span id="eventoLocal">A definir</span></p>
+            <article class="stat-card">
+                <span class="stat-icon">🎀</span>
+                <span>Pessoas</span>
+                <strong id="totalPeople">0</strong>
+                <small>Participantes cadastrados</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">🌸</span>
+                <span>Presenças confirmadas</span>
+                <strong id="confirmedPeople">0</strong>
+                <small>Participantes confirmados</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">💴</span>
+                <span>Total de despesas</span>
+                <strong id="totalExpenses">R$ 0,00</strong>
+                <small>Despesas registradas</small>
+            </article>
+        </section>
+
+        <section class="dashboard-grid">
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">CALENDÁRIO</span>
+                        <h2>Próximas celebrações</h2>
+                    </div>
+                    <a href="organizacao.html" class="text-link">Ver tudo →</a>
                 </div>
-                <a href="organizacao.html" class="text-link">Editar evento →</a>
-            </div>
-
-            <div class="panel">
-                <h3>✨ Próximas tarefas</h3>
-                <div id="tarefasResumo">
-                    <p class="empty">Nenhuma tarefa cadastrada ainda.</p>
+                <div id="upcomingEvents" class="event-preview">
+                    <p class="empty-state">🌸 Nenhuma confraternização cadastrada.</p>
                 </div>
-                <a href="organizacao.html" class="text-link">Ver organização →</a>
-            </div>
+            </article>
 
+            <article class="panel character-panel">
+                <span class="eyebrow">CANTINHO KAWAII</span>
+                <h2>Um toque de fofura!</h2>
+                <div class="character-grid">
+                    <div class="character kuromi">
+                        <span>💜</span>
+                        <strong>Kuromi</strong>
+                    </div>
+                    <div class="character melody">
+                        <span>🎀</span>
+                        <strong>My Melody</strong>
+                    </div>
+                    <div class="character kitty">
+                        <span>🐱</span>
+                        <strong>Hello Kitty</strong>
+                    </div>
+                    <div class="character chococat">
+                        <span>🐈‍⬛</span>
+                        <strong>Chococat</strong>
+                    </div>
+                </div>
+                <p class="soft-message">小さな幸せ • Pequenas felicidades todos os dias.</p>
+            </article>
         </section>
 
-        <footer>
-            Pink Party © 2026 | Organizando momentos especiais ♡
+        <footer class="footer">
+            <p>🌸 Sakura Party • Feito com carinho • 日本と中国のインスピレーション</p>
         </footer>
-
     </main>
 </div>
 
-<script src="js/script.js"></script>
 </body>
 </html>

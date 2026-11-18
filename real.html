@@ -4,113 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pink Party | Financeiro</title>
+    <title>Sakura Party | Financeiro</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-<div class="layout">
+<body data-page="financeiro">
 
+<div class="layout">
     <aside class="sidebar">
-        <div class="logo">🎀 Pink Party</div>
-        <p class="subtitle">Organização de eventos</p>
-        <nav>
-            <a href="index.html">🏠 Início</a>
-            <a href="convidados.html">👥 Convidados</a>
-            <a href="financeiro.html" class="active">💰 Financeiro</a>
-            <a href="organizacao.html">📋 Organização</a>
+        <div class="brand">
+            <span class="brand-icon">🌸</span>
+            <h2>Sakura Party</h2>
+            <small>和 • Harmony & Celebration</small>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">🏮 Início</a>
+            <a href="organizacao.html">🌸 Organização</a>
+            <a href="pessoas.html">🎀 Pessoas</a>
+            <a href="real.html" class="active">💴 Financeiro</a>
         </nav>
-        <div class="sidebar-footer">Feito com ♡</div>
+
+        <div class="sidebar-footer">
+            <span>🌙 ✨ 🏮</span>
+            <p>Organização financeira para celebrar sem preocupações.</p>
+        </div>
     </aside>
 
     <main class="main-content">
-
-        <header class="page-header">
-            <h1>Controle financeiro 💰</h1>
-            <p>Acompanhe as contribuições e os gastos do evento.</p>
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">お金 • OKANE</span>
+                <h1>Controle financeiro</h1>
+                <p>Organize o orçamento e as despesas dos eventos.</p>
+            </div>
+            <div class="top-decoration">💴 🏮</div>
         </header>
 
-        <section class="stats">
-            <div class="stat-card">
-                <div class="stat-icon">💵</div>
-                <p>Total arrecadado</p>
-                <h2 id="arrecadado">R$ 0,00</h2>
+        <section class="welcome-banner compact-banner">
+            <div>
+                <span class="banner-label">FINANCIAL CONTROL</span>
+                <h2>Cada detalhe no seu orçamento.</h2>
+                <p>Acompanhe suas despesas em reais.</p>
             </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">🛍️</div>
-                <p>Total de despesas</p>
-                <h2 id="despesas">R$ 0,00</h2>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">💗</div>
-                <p>Saldo disponível</p>
-                <h2 id="saldo">R$ 0,00</h2>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">🧾</div>
-                <p>Registros financeiros</p>
-                <h2 id="registros">0</h2>
-            </div>
+            <span class="banner-emoji">💮</span>
         </section>
 
-        <section class="form-card">
-            <h3>✨ Novo lançamento</h3>
+        <section class="stats-grid finance-stats">
+            <article class="stat-card">
+                <span>💰 Orçamento total</span>
+                <strong id="financeBudget">R$ 0,00</strong>
+            </article>
+            <article class="stat-card">
+                <span>💴 Despesas</span>
+                <strong id="financeExpenses">R$ 0,00</strong>
+            </article>
+            <article class="stat-card">
+                <span>🌸 Saldo disponível</span>
+                <strong id="financeBalance">R$ 0,00</strong>
+            </article>
+        </section>
 
-            <form id="formFinanceiro">
-                <div class="form-grid">
-
-                    <div class="field">
-                        <label>Descrição</label>
-                        <input type="text" id="descricaoFinanceiro" placeholder="Ex: Compra de bebidas" required>
+        <section class="content-grid">
+            <article class="panel form-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">NOVA DESPESA</span>
+                        <h2 id="expenseFormTitle">Registrar despesa</h2>
                     </div>
-
-                    <div class="field">
-                        <label>Valor (R$)</label>
-                        <input type="number" id="valorFinanceiro" min="0.01" step="0.01" placeholder="0,00" required>
-                    </div>
-
-                    <div class="field">
-                        <label>Tipo de lançamento</label>
-                        <select id="tipoFinanceiro">
-                            <option value="Entrada">Entrada</option>
-                            <option value="Despesa">Despesa</option>
-                        </select>
-                    </div>
-
-                    <div class="field">
-                        <label>Data</label>
-                        <input type="date" id="dataFinanceiro" required>
-                    </div>
-
+                    <span class="heading-icon">💴</span>
                 </div>
 
-                <button type="submit" class="btn-primary">+ Registrar lançamento</button>
-            </form>
+                <form id="expenseForm">
+                    <input type="hidden" id="expenseId">
+
+                    <label for="expenseDescription">Descrição</label>
+                    <input type="text" id="expenseDescription" placeholder="Ex.: Decoração, alimentação..." required>
+
+                    <label for="expenseEvent">Confraternização</label>
+                    <select id="expenseEvent">
+                        <option value="">Despesa geral</option>
+                    </select>
+
+                    <label for="expenseCategory">Categoria</label>
+                    <select id="expenseCategory">
+                        <option value="Alimentação">🍱 Alimentação</option>
+                        <option value="Decoração">🌸 Decoração</option>
+                        <option value="Bebidas">🧋 Bebidas</option>
+                        <option value="Local">🏮 Local</option>
+                        <option value="Transporte">🚗 Transporte</option>
+                        <option value="Outros">🎀 Outros</option>
+                    </select>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="expenseAmount">Valor (R$)</label>
+                            <input type="number" id="expenseAmount" min="0.01" step="0.01" placeholder="0,00" required>
+                        </div>
+                        <div>
+                            <label for="expenseDate">Data</label>
+                            <input type="date" id="expenseDate" required>
+                        </div>
+                    </div>
+
+                    <label for="expensePaid">Situação</label>
+                    <select id="expensePaid">
+                        <option value="false">Pendente</option>
+                        <option value="true">Pago</option>
+                    </select>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="expenseSubmit">
+                            💴 Salvar despesa
+                        </button>
+                        <button type="button" class="secondary-button" id="expenseCancel" hidden>
+                            Cancelar edição
+                        </button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="eyebrow">MOVIMENTAÇÕES</span>
+                        <h2>Lista de despesas</h2>
+                    </div>
+                    <span class="heading-icon">🌸</span>
+                </div>
+
+                <div class="search-box">
+                    <span>🔎</span>
+                    <input type="search" id="expenseSearch" placeholder="Pesquisar despesa...">
+                </div>
+
+                <div id="expensesList" class="record-list">
+                    <p class="empty-state">💴 Nenhuma despesa cadastrada.</p>
+                </div>
+            </article>
         </section>
 
-        <section class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Tipo</th>
-                        <th>Valor</th>
-                        <th>Data</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-
-                <tbody id="listaFinanceiro">
-                    <tr><td colspan="5">Nenhum lançamento cadastrado.</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <footer>Pink Party © 2026 | Feito com ♡</footer>
+        <footer class="footer">
+            <p>🌸 Sakura Party • Financeiro • Valores em R$</p>
+        </footer>
     </main>
 </div>
-<script src="js/script.js"></script>
+
 </body>
 </html>
