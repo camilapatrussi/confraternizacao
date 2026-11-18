@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Party | Organização</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">🎀 Pink Party</div>
+        <p class="subtitle">Organização de eventos</p>
+        <nav>
+            <a href="index.html">🏠 Início</a>
+            <a href="convidados.html">👥 Convidados</a>
+            <a href="financeiro.html">💰 Financeiro</a>
+            <a href="organizacao.html" class="active">📋 Organização</a>
+        </nav>
+        <div class="sidebar-footer">Feito com ♡</div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <h1>Organização do evento 🌷</h1>
+            <p>Planeje os detalhes para que tudo saia perfeito!</p>
+        </header>
+
+        <section class="form-card">
+            <h3>🎀 Informações da confraternização</h3>
+
+            <form id="formEvento">
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label>Nome do evento</label>
+                        <input type="text" id="nomeEvento" placeholder="Ex: Confraternização 2026" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Data</label>
+                        <input type="date" id="dataEvento">
+                    </div>
+
+                    <div class="field">
+                        <label>Horário</label>
+                        <input type="time" id="horarioEvento">
+                    </div>
+
+                    <div class="field">
+                        <label>Local</label>
+                        <input type="text" id="localEvento" placeholder="Onde será realizado?">
+                    </div>
+
+                    <div class="field full">
+                        <label>Descrição</label>
+                        <textarea id="descricaoEvento" placeholder="Informações adicionais sobre o evento..."></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-primary">Salvar informações</button>
+            </form>
+        </section>
+
+        <section class="form-card">
+            <h3>📝 Checklist de tarefas</h3>
+
+            <form id="formTarefa">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Nome da tarefa</label>
+                        <input type="text" id="nomeTarefa" placeholder="Ex: Comprar decoração" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Responsável</label>
+                        <input type="text" id="responsavelTarefa" placeholder="Quem ficará responsável?">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">+ Adicionar tarefa</button>
+            </form>
+
+            <div id="listaTarefas" style="margin-top:20px;">
+                <p class="empty">Nenhuma tarefa cadastrada.</p>
+            </div>
+        </section>
+
+        <section class="form-card">
+            <h3>🍰 Comidas e bebidas</h3>
+
+            <form id="formItem">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Nome do item</label>
+                        <input type="text" id="nomeItem" placeholder="Ex: Refrigerante" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Categoria</label>
+                        <select id="categoriaItem">
+                            <option value="Comida">Comida</option>
+                            <option value="Bebida">Bebida</option>
+                            <option value="Decoração">Decoração</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Responsável</label>
+                        <input type="text" id="responsavelItem" placeholder="Quem vai levar?">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">+ Adicionar item</button>
+            </form>
+
+            <div id="listaItens" style="margin-top:20px;">
+                <p class="empty">Nenhum item cadastrado.</p>
+            </div>
+        </section>
+
+        <footer>Pink Party © 2026 | Feito com ♡</footer>
+
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

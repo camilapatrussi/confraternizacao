@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Party | Início</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">🎀 Pink Party</div>
+        <p class="subtitle">Organização de eventos</p>
+
+        <nav>
+            <a href="index.html" class="active">🏠 Início</a>
+            <a href="convidados.html">👥 Convidados</a>
+            <a href="financeiro.html">💰 Financeiro</a>
+            <a href="organizacao.html">📋 Organização</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            Feito com ♡
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Olá, organizadora! 🌸</h1>
+                <p>Vamos preparar uma confraternização incrível?</p>
+            </div>
+            <div class="profile">🎀</div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <span>EVENTO ESCOLAR</span>
+                <h2>Minha Confraternização 💗</h2>
+                <p>Organize cada detalhe e torne esse momento especial!</p>
+                <a href="organizacao.html" class="btn">Organizar evento</a>
+            </div>
+            <div class="welcome-decoration">🌷</div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <p>Total de convidados</p>
+                <h2 id="totalConvidados">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💗</div>
+                <p>Presenças confirmadas</p>
+                <h2 id="totalConfirmados">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <p>Valor arrecadado</p>
+                <h2 id="totalArrecadado">R$ 0,00</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <p>Tarefas concluídas</p>
+                <h2 id="totalTarefas">0</h2>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="panel">
+                <h3>📅 Detalhes do evento</h3>
+                <div class="event-details">
+                    <p><strong>Nome:</strong> <span id="eventoNome">Minha Confraternização</span></p>
+                    <p><strong>Data:</strong> <span id="eventoData">A definir</span></p>
+                    <p><strong>Horário:</strong> <span id="eventoHorario">A definir</span></p>
+                    <p><strong>Local:</strong> <span id="eventoLocal">A definir</span></p>
+                </div>
+                <a href="organizacao.html" class="text-link">Editar evento →</a>
+            </div>
+
+            <div class="panel">
+                <h3>✨ Próximas tarefas</h3>
+                <div id="tarefasResumo">
+                    <p class="empty">Nenhuma tarefa cadastrada ainda.</p>
+                </div>
+                <a href="organizacao.html" class="text-link">Ver organização →</a>
+            </div>
+
+        </section>
+
+        <footer>
+            Pink Party © 2026 | Organizando momentos especiais ♡
+        </footer>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

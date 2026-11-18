@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Party | Convidados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">🎀 Pink Party</div>
+        <p class="subtitle">Organização de eventos</p>
+        <nav>
+            <a href="index.html">🏠 Início</a>
+            <a href="convidados.html" class="active">👥 Convidados</a>
+            <a href="financeiro.html">💰 Financeiro</a>
+            <a href="organizacao.html">📋 Organização</a>
+        </nav>
+        <div class="sidebar-footer">Feito com ♡</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1>Lista de convidados 👥</h1>
+            <p>Cadastre e acompanhe as confirmações de presença.</p>
+        </header>
+
+        <section class="form-card">
+            <h3>💗 Adicionar convidado</h3>
+
+            <form id="formConvidado">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Nome completo</label>
+                        <input type="text" id="nomeConvidado" placeholder="Nome do convidado" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Turma / Setor</label>
+                        <input type="text" id="turmaConvidado" placeholder="Ex: 3º Desenvolvimento">
+                    </div>
+
+                    <div class="field">
+                        <label>Contato</label>
+                        <input type="text" id="contatoConvidado" placeholder="Telefone ou e-mail">
+                    </div>
+
+                    <div class="field">
+                        <label>Presença</label>
+                        <select id="presencaConvidado">
+                            <option value="Pendente">Pendente</option>
+                            <option value="Confirmado">Confirmado</option>
+                            <option value="Não irá">Não irá</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">+ Adicionar convidado</button>
+            </form>
+        </section>
+
+        <section class="summary-box">
+            <p>Convidados cadastrados</p>
+            <h2 id="quantidadeConvidados">0 pessoas</h2>
+        </section>
+
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Contato</th>
+                        <th>Presença</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="listaConvidados">
+                    <tr><td colspan="5">Nenhum convidado cadastrado.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>Pink Party © 2026 | Feito com ♡</footer>
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
